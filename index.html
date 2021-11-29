@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Desafio de CSS Enext">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+ 
+  <!------biblioteca para carousel--->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  
+  <title>Projeto final</title>
+</head>
+
+<body>
+<!--------------Header start--------------->
+  <nav>
+    <div class="menu-icon">
+      <span class="fas fa-bars"></span>
+    </div>
+    <div class="logo">Enext</div>
+
+    <div class="nav-items">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Celulares</a></li>
+      <li><a href="#">Acessórios</a></li>
+      <li><a href="#">Conta</a></li>
+    </div>
+    <div class="search-icon">
+      <span class="fas fa-search"></span>
+    </div>
+    <div class="cancel-icon">
+      <span class="fas fa-times"></span>
+    </div>
+    <form action="#">
+      <input type="search" class="search-data" placeholder="O que deseja encontrar?" required>
+      <button type="submit" class="fas fa-search"></button>
+    </form>
+  </nav>
+
+<!--------------Header end--------------->
+
+<!-----------Product start------------>
+  
+    <div class="main">
+
+      <div class="flex-product-info-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-1 col-sm-12 col-lg-3 col-md-6 responsivo">
+              <div class="image">
+                <span onclick="TrocarImg('./assets/2.jpg')" class="product-images">
+                  <img src="./assets/2.jpg" alt="product-image">
+                </span>
+              </div>
+              <div style="line-height: 0px; margin: 1px; padding: 1px;">
+                &nbsp;  
+              </div>
+              <div class="image">
+                <span onclick="TrocarImg('./assets/3.jpg')" class="product-images" >
+                  <img src="./assets/3.jpg" alt="product-image">
+                </span>
+              </div>
+              <div style="line-height: 0px; margin: 1px; padding: 1px;">
+                &nbsp;  
+              </div>
+              <div  class="image"> 
+                <span onclick="TrocarImg('./assets/4.jpg')" class="product-images">
+                  <img src="./assets/4.jpg" alt="product-image">
+                </span>
+              </div>
+              <div style="line-height: 0px; margin: 1px; padding: 1px;">
+                &nbsp;  
+              </div>
+              <div  class="image">
+                <span onclick="TrocarImg('./assets/5.jpg')" class="product-images">
+                  <img src="./assets/5.jpg" alt="product-image">
+                </span>
+              </div>
+            </div>
+        
+          <div class="col-3 col-sm-6 col-lg-3 col-md-6 responsivo">
+          
+            <span class="product-image-principal" >
+              <img  src="./assets/2.jpg" alt="product-image" id='image1'>
+  
+            </span>
+        
+          </div>
+          <div class="w-100 d-none d-md-block"></div>
+  
+          <div class="col col-sm-12 col-lg-3 col-md-12">
+            <div class="product-content">
+              <div class="product-heading">
+                <h1 class="product-title">Smartphone Mi 11 Lite 128gb 6gb RAM</h1>
+                <p class="product-variant" id="name-color">Boba Black - Preto</p>
+                <p class="product-brand">Marca: <span> Xiaomi</span></p>
+
+                <select onchange="TrocarPreco()" name="cores" id="product-color">
+                  <option value="CELXMI11P128">Preto</option>
+                  <option value="CELXMI11B128">Branco</option>
+                  <option value="CELXMI11C128">Cinza</option>
+                </select> 
+              </div>
+
+              <div class="product-prices">
+                <div class="product-rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                </div>
+                <div class="was-price">
+                  <span>De: </span> <del id="was-price">R$ 2.699,00</del>
+                </div>
+                <div class="is-price">
+                  <span>Por: </span> <span id="is-price">R$ 2.500,00</span>
+                </div>
+                <p id="parcela">
+                  Em até 10x de R$ 250,00 sem juros
+                </p>
+              </div>
+              <div class="product-buy-section">
+                <input type="number" min="0" value="1">
+                <button type="button" class="btn">
+                  Adicionar no carrinho <i class="fa fa-shopping-cart"></i>
+                </button>
+                <button type="button" class="btn">
+                  Comprar
+                </button>
+              </div>
+              <div class="product-freight">
+                <h2>
+                  <img width="32" height="32" src="./assets/truck.png" alt="truck-freight">
+                  <span>Consultar prazo e valor do frete</span>
+                </h2>
+                <div>
+                  <div>
+                    <input type="text" placeholder="00000000" type="number" maxlength="8">
+                    <button>Ok</button>
+                  </div>
+                  <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" rel="noreferrer" target="_blank">
+                    Não sei o CEP</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  </div>
+  </div>
+    <h2 class=>Detalhes Técnicos <button id="show-or-hide"><i class="fas fa-angle-down"></i></button> </h2> 
+      <hr>
+    <div class="product-specifications-wrapper">
+  
+      <table id="techical-details" class="techical-details" role="presentation">
+        <tbody>
+        <tr>
+          <th>
+            RAM
+          </th>
+          <td>
+            6 GB
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Capacidade de armazenamento da memória
+          </th>
+          <td>
+            128 GB
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Tamanho da memória RAM instalada
+          </th>
+          <td>
+            6 GB
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Capacidade de armazenamento digital
+          </th>
+          <td>
+           128 GB
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Pilha(s) ou bateria(s):
+          </th>
+          <td>
+            1 Polímero de lítio baterias ou pilhas necessárias (inclusas).
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Número do modelo
+          </th>
+          <td>
+            MZB08GJEU
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Tamanho de tela vertical
+          </th>
+          <td>
+            6.55 Polegadas
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Outras características de tela
+          </th>
+          <td>
+            Wireless
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Entrada de usuário
+          </th>
+          <td>
+            Microphone
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Cor
+          </th>
+          <td>
+           Azul
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Modelos compatíveis
+          </th>
+          <td>
+            Não se aplica
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Peso do produto
+          </th>
+          <td>
+          157 g
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Dimensões do produto
+          </th>
+          <td>
+            0.7 x 7.57 x 16.05 cm; 157 g
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Marca
+          </th>
+          <td>
+            Xiaomi
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Funciona a bateria ou pilha?
+          </th>
+          <td>
+            Sim
+          </td>
+        </tr>
+        <tr>
+          <th>
+            EAN
+          </th>
+          <td>
+            6934177732676
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    
+    
+      </div>
+    </div>
+  
+
+<!-----------Product end------------>
+
+<!-----------Slider start------------>
+  <div class="title-card">
+    <h2>Veja mais produtos</h2>  
+  </div>
+  <div class="container-card">
+    
+    <div class="card">
+      <div class="imgBx">
+        <img src="assets/1.jpg" alt="Smartphone-Xiaomi-M11" height="120" width="120">
+      </div>
+      <div class="contentBx">
+        <h2>Smartphone Mi 11 Lite 128gb 6gb RAM</h2>
+        <div class="color">
+          <h3>Cor:</h3>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="price-card">
+        <div class="was-price">
+          <span>De: </span> <del>R$ 2.699,00</del>
+        </div>
+        <div class="is-price">
+          <span>Por: </span> <span>R$ 2.500,00</span>
+        </div>
+        <p>
+        10x de<span> R$ 250,00 sem juros</span>
+        </p>
+        </div>
+      </div> 
+    </div>
+
+    <div class="card">
+      <div class="imgBx">
+        <img src="assets/1.jpg" alt="Smartphone-Xiaomi-M11" height="120" width="120">
+      </div>
+      <div class="contentBx">
+        <h2>Smartphone Mi 11 Lite 128gb 6gb RAM</h2>
+        <div class="color">
+          <h3>Cor:</h3>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="price-card">
+        <div class="was-price">
+          <span>De: </span> <del>R$ 2.699,00</del>
+        </div>
+        <div class="is-price">
+          <span>Por: </span> <span>R$ 2.500,00</span>
+        </div>
+        <p>
+        10x de<span> R$ 250,00 sem juros</span>
+        </p>
+        </div>
+      </div> 
+    </div>
+    <div class="card">
+      <div class="imgBx">
+        <img src="assets/1.jpg" alt="Smartphone-Xiaomi-M11" height="120" width="120">
+      </div>
+      <div class="contentBx">
+        <h2>Smartphone Mi 11 Lite 128gb 6gb RAM</h2>
+        <div class="color">
+          <h3>Cor:</h3>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="price-card">
+        <div class="was-price">
+          <span>De: </span> <del>R$ 2.699,00</del>
+        </div>
+        <div class="is-price">
+          <span>Por: </span> <span>R$ 2.500,00</span>
+        </div>
+        <p>
+        10x de<span> R$ 250,00 sem juros</span>
+        </p>
+        </div>
+      </div> 
+    </div>
+    <div class="card">
+      <div class="imgBx">
+        <img src="assets/1.jpg" alt="Smartphone-Xiaomi-M11" height="120" width="120">
+      </div>
+      <div class="contentBx">
+        <h2>Smartphone Mi 11 Lite 128gb 6gb RAM</h2>
+        <div class="color">
+          <h3>Cor:</h3>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="price-card">
+        <div class="was-price">
+          <span>De: </span> <del>R$ 2.699,00</del>
+        </div>
+        <div class="is-price">
+          <span>Por: </span> <span>R$ 2.500,00</span>
+        </div>
+        <p>
+        10x de<span> R$ 250,00 sem juros</span>
+        </p>
+        </div>
+      </div> 
+    </div>
+    <div class="card">
+      <div class="imgBx">
+        <img src="assets/1.jpg" alt="Smartphone-Xiaomi-M11" height="120" width="120">
+      </div>
+      <div class="contentBx">
+        <h2>Smartphone Mi 11 Lite 128gb 6gb RAM</h2>
+        <div class="color">
+          <h3>Cor:</h3>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="price-card">
+        <div class="was-price">
+          <span>De: </span> <del>R$ 2.699,00</del>
+        </div>
+        <div class="is-price">
+          <span>Por: </span> <span>R$ 2.500,00</span>
+        </div>
+        <p>
+        10x de<span> R$ 250,00 sem juros</span>
+        </p>
+        </div>
+      </div> 
+    </div>
+    <div class="card">
+      <div class="imgBx">
+        <img src="assets/1.jpg" alt="Smartphone-Xiaomi-M11" height="120" width="120">
+      </div>
+      <div class="contentBx">
+        <h2>Smartphone Mi 11 Lite 128gb 6gb RAM</h2>
+        <div class="color">
+          <h3>Cor:</h3>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="price-card">
+        <div class="was-price">
+          <span>De: </span> <del>R$ 2.699,00</del>
+        </div>
+        <div class="is-price">
+          <span>Por: </span> <span>R$ 2.500,00</span>
+        </div>
+        <p>
+        10x de<span> R$ 250,00 sem juros</span>
+        </p>
+        </div>
+      </div> 
+    </div>
+  </div>
+ 
+ <!-----------Slider end------------>
+
+ <!---newsletter start----->
+  <section class="newsletter">
+    <h3>Inscreva-se para não perder as ofertas </h3>
+    <form action="">
+      <input class="box" type="email" placeholder="Coloque seu email">
+      <input type="submit" value="Inscreva-se" class="btn">
+    </form>
+  </section>
+<!---newletter end----->
+
+  <!-----------footer start------------>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-col aboutus">
+        <h4>Enext</h4>
+        <p>Somos a melhor loja de produtos eletrônicos no brasil e com grande avanço no exterior. Sempre proporcionando a melhor experiência</p>
+        <h4>Siga-nos</h4>
+        <ul class="links">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col links-local">
+        <h4>Links locais</h4>
+        <ul>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Política e Privacidade</i></a></li>
+          <li><a href="#">Ajuda</i></a></li>
+          <li><a href="#">Termos e Condições</i></a></li>
+        </ul>
+      </div>
+
+      <div class="sec contact">
+        <h4>Contatos</h4>
+        <ul class="info">
+          <li>
+          <span><i class="fas fa-map-marker-alt"></i></i></span>
+          <span>Rua linda 99<br>
+                Queimados, RJ 26666-000, <br>BRA</span>
+          </li>
+          <li>
+          <span><i class="fa fa-phone"></i></i></span>
+          <p><a href="number">+55 (21) 98888-8888</a><br>
+          <a href="number">+55 (21) 2666-6666</a></p>
+          </li>
+          <li>
+          <span><i class="fa fa-envelope"></i></i></span>
+          <p><a href="email">Enext.loja@gmail.com</a></p>
+          </li>
+        </ul>
+      </div>
+    </div>   
+    
+  </footer>
+    <div class="copyrightText">
+    <P>Criado por Thainara Nogueira - Projeto final</P>
+    </div>
+<!-----------footer end------------>
+
+  <script  src="js/script.js"></script>
+
+</body>
+
+</html>
